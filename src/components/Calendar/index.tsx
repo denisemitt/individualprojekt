@@ -4,7 +4,9 @@ import {add, format} from "date-fns"
 import { time } from 'console'
 import { INTERVAL, STORE_CLOSING_TIME, STORE_OPENING_TIME } from '~/constants/config'
 import Calendar from 'react-calendar'
+import dynamic from 'next/dynamic'
 
+const DynamicReactCalendar = dynamic(() => import('react-calendar'), { ssr: false });
 
 
 interface indexProbs {}
@@ -22,7 +24,7 @@ const index: FC<indexProbs> = ({}) => {
 
     const [isClient, setIsClient] = useState(false);
 
-  // Ensure this code runs only on the client to prevent hydration issues
+  
   useEffect(() => {
     setIsClient(true);
   }, []);
