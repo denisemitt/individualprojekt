@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import calendar from '../components/calendar'
+import Calendar from 'src/components/Calendar'
 import {type NextPage } from 'next'
 import { api } from "~/utils/api"
 
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
 
       <main>
-          <calendar/>
+          <Calendar/>
       </main>
     </>
   )

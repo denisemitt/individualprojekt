@@ -12,6 +12,8 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <Component {...pageProps} />
     </div>
   );
+
+  
 };
 
 export default api.withTRPC(MyApp);
