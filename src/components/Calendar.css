@@ -39,6 +39,14 @@
   }
 }
 
+
+
+
+.react-calendar__month-view__days__day--weekend {
+  display: none !important;
+} 
+
+
 .react-calendar button {
   margin: 0;
   border: 0;

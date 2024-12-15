@@ -6,15 +6,35 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
+    provider = "cockroachdb"
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model Widget {
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+}
 
-    @@index([name])
+model MenuItem {
+    id String @id @default(cuid())
+    createAt DateTime @default(now())
+    pdatedAt  DateTime @updatedAt
+  name       String
+  price      Float
+  // description String
+  categories String[]
+  imageKey   String
+  active     Boolean  @default(true)
+}
+
+model Day {
+  id        String @id @default(cuid())
+  name      String // monday, tuesday, ...
+  dayOfWeek Int // @see getDay() documentation, 0 for Sunday, 1 for Monday, ...
+  openTime  String
+  closeTime String
+}
+
+model ClosedDay {
+  id   String   @id @default(cuid())
+  date DateTime @unique
 }
