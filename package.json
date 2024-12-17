@@ -2,7 +2,6 @@
   "name": "booking-tables",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
     "build": "next build",
     "check": "next lint && tsc --noEmit",
@@ -62,6 +61,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/cookie": "^0.6.0",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.16",

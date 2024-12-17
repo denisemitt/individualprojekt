@@ -8,13 +8,13 @@ import { now } from 'src/constants/config'
 import { trpc } from 'src/utils/trpc'
 import { BsCart } from 'react-icons/bs'
 
+
 const MenuPage: FC = () => {
   const router = useRouter()
 
   const [selectedTime, setSelectedTime] = useState<string | null>(null) 
   const { isFetchedAfterMount } = trpc.menu.checkMenuStatus.useQuery(undefined, {
     onError: () => {
-     
     },
   })
 

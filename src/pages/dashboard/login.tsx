@@ -3,7 +3,7 @@ import Login from 'src/components/Login'
 
 const login: FC = () => {
   return (
-    <Login />
+    <Login/>
   )
 }
 
