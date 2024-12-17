@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { type ChangeEvent, type FC, useEffect, useState } from 'react'
-import type { MultiValue } from 'react-select'
+import type { MultiValue } from 'react-select/dist/declarations/src'
 import { MAX_FILE_SIZE } from 'src/constants/config'
 import { selectOptions } from 'src/utils/helper'
 import { trpc } from 'src/utils/trpc'
@@ -28,6 +28,7 @@ const Menu: FC = () => {
   const [preview, setPreview] = useState<string>('')
   const [error, setError] = useState<string>('')
 
+  
   useEffect(() => {
     // create the preview
     if (!input.file) return
