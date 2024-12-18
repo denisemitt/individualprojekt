@@ -42,7 +42,9 @@ export async function setUserCookie(res: NextResponse) {
     maxAge: 60 * 60 * 2, // 2 hours in seconds
     secure: process.env.NODE_ENV === 'production', // Avoid secure in development
     sameSite: 'lax', 
-  })
+  });
 
-  return res
+  console.log('Cookies after setting:', res.cookies.getAll());
+
+  return res;
 }
