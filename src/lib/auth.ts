@@ -40,6 +40,8 @@ export async function setUserCookie(res: NextResponse) {
   res.cookies.set('user-token', token, {
     httpOnly: true,
     maxAge: 60 * 60 * 2, // 2 hours in seconds
+    secure: process.env.NODE_ENV === 'production', // Avoid secure in development
+    sameSite: 'lax', 
   })
 
   return res
