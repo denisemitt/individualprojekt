@@ -13,10 +13,13 @@ const MenuPage: FC = () => {
   const router = useRouter()
 
   const [selectedTime, setSelectedTime] = useState<string | null>(null) 
-  const { isFetchedAfterMount } = trpc.menu.checkMenuStatus.useQuery(undefined, {
-    onError: () => {
-    },
-  })
+  const { data, error, isFetchedAfterMount } = trpc.menu.checkMenuStatus.useQuery(undefined);
+
+  if (error) {
+  
+  console.error("Fehler beim Laden des Menüs:", error);
+}
+
 
   const [showCart, setShowCart] = useState<boolean>(false)
   const [productsInCart, setProductsInCart] = useState<{ id: string; quantity: number }[]>([])
