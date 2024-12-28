@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import { useState, type ChangeEvent, type FC } from 'react'
 import { HiLockClosed } from 'react-icons/hi'
 import { trpc } from '../utils/trpc'
+import Image from 'next/image'
 
 const Login: FC = () => {
   const router = useRouter()
@@ -25,7 +26,7 @@ const Login: FC = () => {
     <div className='flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
       <div className='w-full max-w-md space-y-8'>
         <div>
-          <img
+          <Image
             className='mx-auto h-12 w-auto'
             src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
             alt='Workflow'

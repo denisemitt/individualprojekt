@@ -1,5 +1,6 @@
 import type {Day} from '@prisma/client'
-import { FC, useState, useEffect} from 'react' 
+import  {  useState, useEffect} from 'react' 
+import type { FC } from 'react'
 import {format, formatISO, isBefore, parse } from "date-fns"
 import { INTERVAL } from 'src/constants/config'
 import dynamic from 'next/dynamic'

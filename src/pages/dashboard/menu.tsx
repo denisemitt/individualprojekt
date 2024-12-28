@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import { type ChangeEvent, type FC, useEffect, useState } from 'react'
+import { type ChangeEvent, useEffect, useState } from 'react'
+import type { FC } from "react"
 import type { MultiValue } from 'react-select/dist/declarations/src'
 import { MAX_FILE_SIZE } from 'src/constants/config'
 import { selectOptions } from 'src/utils/helper'
