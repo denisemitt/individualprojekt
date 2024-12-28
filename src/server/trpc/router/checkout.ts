@@ -4,7 +4,7 @@ import _stripe from 'stripe'
 import { TRPCError } from '@trpc/server'
 
 const stripe = new _stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-11-20.acacia',
+  apiVersion: '2024-12-18.acacia',
 })
 
 export const checkoutRouter = router({
